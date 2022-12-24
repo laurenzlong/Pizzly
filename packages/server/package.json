@@ -19,6 +19,6 @@
         "npm": ">=6.14.11"
     },
     "dependencies": {
-        "@nangohq/auth": "^0.4.5"
+        "@nangohq/auth": "file:../../packages/auth"
     }
 }
