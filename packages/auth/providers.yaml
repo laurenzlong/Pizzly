@@ -151,10 +151,12 @@ sage:
         filter: apiv3.1
 salesforce:
     auth_mode: OAUTH2
-    authorization_url: https://boxit2-dev-ed.my.salesforce.com/services/oauth2/authorize
-    token_url: https://boxit2-dev-ed.my.salesforce.com/services/oauth2/token
+    authorization_url: https://${connectionConfig.params.subdomain}.my.salesforce.com/services/oauth2/authorize
+    token_url: https://${connectionConfig.params.subdomain}.my.salesforce.com/services/oauth2/token
     authorization_params:
         response_type: code
+        prompt: login # forces re-auth every time
+        # prompt: login consent
 salesloft:
     auth_mode: OAUTH2
     authorization_url: https://accounts.salesloft.com/oauth/authorize
