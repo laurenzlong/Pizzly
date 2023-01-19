@@ -10,7 +10,7 @@ services:
         ports:
             - '5432:5432'
         networks:
-            - nango
+            - pizzly
 
     pizzly-server:
         image: nango.docker.scarf.sh/nangohq/pizzly-server
@@ -19,10 +19,10 @@ services:
         env_file:
             - .env
         ports:
-            - '3003:3003'
+            - '443:443'
         depends_on:
             - pizzly-db
         networks:
-            - nango
+            - pizzly
 networks:
-    nango:
+    pizzly:
